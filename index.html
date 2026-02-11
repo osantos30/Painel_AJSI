@@ -5,7 +5,6 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Painel de Atalhos SNI</title>
 <style>
-  /* --- DESIGN GERAL --- */
   .container {
     max-width: 1000px;
     margin: 0 auto;
@@ -13,7 +12,7 @@
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   }
 
-  /* --- DIVISORES DE CATEGORIA --- */
+  /* Divisores */
   .separator {
     display: flex;
     align-items: center;
@@ -35,7 +34,7 @@
     letter-spacing: 1px;
   }
 
-  /* --- GRADE DE BOTÕES --- */
+  /* Grade de Botões */
   .button-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -66,7 +65,7 @@
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
   }
 
-  /* --- BOTÃO MENU MOBILE --- */
+  /* Botão Menu Mobile */
   .menu-toggle-container {
     display: flex;
     justify-content: center;
@@ -92,10 +91,10 @@
   .menu-icon {
     width: 15px;
     height: 15px;
-    filter: brightness(0); /* Garante que o ícone da imagem fique preto */
+    filter: brightness(0);
   }
 
-  /* Esconder o botão de menu em PC/Tablet */
+  /* Esconder no PC */
   @media (min-width: 769px) {
     .menu-toggle-container { display: none; }
   }
@@ -113,3 +112,34 @@
 
   <div class="separator">
     <span class="separator-text">Seminários</span>
+  </div>
+
+  <div class="button-grid">
+    <a href="https://gsm.sni.org.br/SAM/SAJ/MenuConteudo.aspx?l=pt-BR&CodFrm=ArqMFrm000006169" class="btn-shortcut" target="_blank">Seminário Jovens Mulheres</a>
+    <a href="https://gsm.sni.org.br/SAM/SAJ/MenuConteudo.aspx?l=pt-BR&CodFrm=ArqMFrm000006168" class="btn-shortcut" target="_blank">Seminário Alegria, Sonho e Fé</a>
+    <a href="https://gsm.sni.org.br/SAM/SAJ/MenuConteudo.aspx?l=pt-BR&CodFrm=ArqMFrm000006170" class="btn-shortcut" target="_blank">Seminário para Junia</a>
+    <a href="https://gsm.sni.org.br/SAM/SAJ/MenuConteudo.aspx?l=pt-BR&CodFrm=ArqMFrm000006171" class="btn-shortcut" target="_blank">Seminário para Seinen</a>
+  </div>
+
+  <div class="separator">
+    <span class="separator-text">Atalhos</span>
+  </div>
+
+  <div class="button-grid">
+    <a href="https://sgal.sni.org.br/" class="btn-shortcut" target="_blank">SGAL</a>
+    <a href="https://missaosagrada.sni.org.br/sam/SAMS/MenuHome.aspx?l=pt-BR" class="btn-shortcut" target="_blank">Apóstolo da Missão Sagrada</a>
+    <a href="https://gsm.sni.org.br/sam/PedidoRevistasWeb/?l=pt-BR" class="btn-shortcut" target="_blank">Revistas Sagradas</a>
+  </div>
+
+  <div class="menu-toggle-container">
+    <button type="button" class="btn-main-menu" 
+            onclick="window.scrollTo(0,0); document.body.scrollTop = 0; document.documentElement.scrollTop = 0; setTimeout(function(){ document.getElementById('sidebarCollapse').click(); }, 100);">
+       <img src="icons/iconmenu.png" class="menu-icon" alt="Menu">
+       Menu Principal
+    </button>
+  </div>
+
+</div>
+
+</body>
+</html>
