@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style>
+  .container {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 20px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  }
+
+  /* Divisores */
+  .separator {
+    display: flex;
+    align-items: center;
+    text-align: center;
+    margin: 35px 0 20px;
+  }
+  .separator::before, .separator::after {
+    content: '';
+    flex: 1;
+    border-bottom: 2px solid #0056b3;
+  }
+  .separator:not(:empty)::before { margin-right: .75em; }
+  .separator:not(:empty)::after { margin-left: .75em; }
+  .separator-text {
+    color: #0056b3;
+    font-weight: bold;
+    font-size: 18px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+  }
+
+  /* Grid */
+  .button-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 15px;
+  }
+
+  .btn-shortcut {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 60px;
+    padding: 10px 15px;
+    font-size: 15px;
+    font-weight: 600;
+    text-align: center;
+    text-decoration: none;
+    color: #ffffff; 
+    background-color: #0056b3;
+    border: 2px solid #0056b3;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+    cursor: pointer;
+  }
+
+  .btn-shortcut:hover {
+    background-color: #ffffff;
+    color: #0056b3;
+  }
+
+  /* Botão Menu Mobile */
+  .menu-toggle-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 40px;
+    padding-bottom: 40px;
+  }
+
+  .btn-main-menu {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    background-color: #ffffff;
+    border: 1px solid #333333;
+    color: #333333;
+    padding: 12px 24px;
+    border-radius: 6px;
+    font-size: 14px;
+    font-weight: bold;
+    cursor: pointer;
+    /* Remove o efeito de hover que causa o duplo clique no iOS */
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  .menu-icon {
+    width: 15px;
+    height: 15px;
+    filter: brightness(0); 
+  }
+
+  /* Esconder no PC */
+  @media (min-width: 769px) {
+    .menu-toggle-container { display: none; }
+  }
+</style>
+</head>
+<body>
+
+<div class="container">
+  
+  <div class="button-grid">
+    <a href="https://gsm.sni.org.br/SAM/SAJ/MenuConteudo.aspx?l=pt-BR&CodFrm=ArqMFrm000003599" class="btn-shortcut" target="_blank">Associação Local</a>
+    <a href="https://gsm.sni.org.br/SAM/SAJ/MenuArq.aspx?l=pt-BR&CodFrm=ArqMFrm000003654" class="btn-shortcut" target="_blank">Presidente Regional</a>
+    <a href="https://gsm.sni.org.br/SAM/SAJ/MenuArq.aspx?l=pt-BR&CodFrm=ArqMFrm000006175" class="btn-shortcut" target="_blank">Boletim Informativo - 2026</a>
+  </div>
+
+  <div class="separator">
+    <span class="separator-text">Seminários</span>
+  </div>
+
+  <div class="button-grid">
+    <a href="https://gsm.sni.org.br/SAM/SAJ/MenuConteudo.aspx?l=pt-BR&CodFrm=ArqMFrm000006169" class="btn-shortcut" target="_blank">Seminário Jovens Mulheres</a>
+    <a href="https://gsm.sni.org.br/SAM/SAJ/MenuConteudo.aspx?l=pt-BR&CodFrm=ArqMFrm000006168" class="btn-shortcut" target="_blank">Seminário Alegria, Sonho e Fé</a>
+    <a href="https://gsm.sni.org.br/SAM/SAJ/MenuConteudo.aspx?l=pt-BR&CodFrm=ArqMFrm000006170" class="btn-shortcut" target="_blank">Seminário para Junia</a>
+    <a href="https://gsm.sni.org.br/SAM/SAJ/MenuConteudo.aspx?l=pt-BR&CodFrm=ArqMFrm000006171" class="btn-shortcut" target="_blank">Seminário para Seinen</a>
+  </div>
+
+  <div class="separator">
+    <span class="separator-text">Atalhos</span>
+  </div>
+
+  <div class="button-grid">
+    <a href="https://sgal.sni.org.br/" class="btn-shortcut" target="_blank">SGAL</a>
+    <a href="https://missaosagrada.sni.org.br/sam/SAMS/MenuHome.aspx?l=pt-BR" class="btn-shortcut" target="_blank">Apóstolo da Missão Sagrada</a>
+    <a href="https://gsm.sni.org.br/sam/PedidoRevistasWeb/?l=pt-BR" class="btn-shortcut" target="_blank">Revistas Sagradas</a>
+  </div>
+
+  <div class="menu-toggle-container">
+    <button type="button" class="btn-main-menu" 
+            onclick="window.scrollTo(0,0); document.body.scrollTop = 0; document.documentElement.scrollTop = 0; setTimeout(function(){ document.getElementById('sidebarCollapse').click(); }, 100);">
+       <img src="icons/iconmenu.png" class="menu-icon" alt="Menu">
+       Menu Principal
+    </button>
+  </div>
+
+</div>
+
+</body>
+</html>
